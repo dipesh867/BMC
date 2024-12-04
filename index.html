@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>eduAct</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+
+      
+    <style>
+    .landingpage {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(56, 1, 63, 0.7); /* Backup color for older browsers */
+  position: relative; /* Establish a positioning context for the video */
+  color: white;
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.back-img-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height:80vh;
+  object-fit: cover; /* Ensure the video covers the entire background */
+  z-index: -2; /* Place the video behind content */
+  opacity: 0.7; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 0, 29, 0.8);  /* Overlay color with transparency */
+  z-index: -1; /* Place above the video but below the content */
+}
+.overlay-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(5, 0, 29, 0.7); /* Overlay color with transparency */
+  z-index: -1; /* Place above the video but below the content */
+}
+@media(max-width:800px){
+    .overlay-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(5, 0, 29, 0.7); /* Overlay color with transparency */
+  z-index: -1; /* Place above the video but below the content */
+}
+.back-img-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height:50vh;
+  object-fit: cover; /* Ensure the video covers the entire background */
+  z-index: -2; /* Place the video behind content */
+  opacity: 0.7; 
+}
+}
+
+.navbar {
+  background-color:transparent;
+  padding: 10px 0;
+  width: 100%; /* Ensure full width */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spread left, center, and right sections */
+  width: 100%; /* Full width */
+  max-width: 100%; /* Prevent unnecessary width restriction */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-circle img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.college-name {
+  font-family: 'Georgia', serif;
+  color: white;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.college-line-1 {
+  font-weight: bold;
+}
+
+.college-line-2 {
+  font-weight: normal;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  flex: 1; /* Take up remaining space between left and right sections */
+}
+
+.navbar-nav .nav-link {
+    font-weight: 300;
+    letter-spacing: 0.1cap;
+  color: white;
+  font-size: 16px;
+  margin: 0 10px; /* Add spacing between links */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FF6F00;
+  transform: scale(1.1); /* Scale up the text */
+}
+
+.navbar-nav.mx-auto {
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle 3D shadow effect */
+  padding: 5px 20px; /* Add padding inside the menu */
+  backdrop-filter: blur(10px); /* Optional: Blurred background for better visual effect */
+}
+
+
+.btn-custom {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #45a049;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item.right-aligned {
+  margin-left: 15px; /* Add spacing between right-side items */
+}
+
+
+
+.nav-link i {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-link i:hover {
+  color: #FF6F00;
+  transform: scale(1.1); /* Scale up the text */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
+}
+ 
+</style>
+
+
+<style>
+.header-content {
+  margin-top: 300px;
+  text-align: center;
+  position: relative;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  width: 100%;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.custom-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  min-width: 100%; /* Each slide takes full width */
+  opacity: 0; /* Initially hide the slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  left: 0; /* Center slide */
+}
+
+.slide.previous {
+  left: -100%; /* Moves the previous slide out to the left */
+}
+
+.slide.next {
+  left: 100%; /* Moves the next slide in from the right */
+}
+
+.slide h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.btn-custom {
+  padding: 6px 20px;
+  color: white;
+  background-color: #68bc42;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #e65e00;
+}
+
+</style>
+
+
+<style>
+
+
+
+
+
+.background-circles {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  overflow: hidden;
+}
+
+
+
+.logo-circle {
+  width: 80px;              /* Size of the circle */
+  height: 80px;
+  background: transparent;        /* Background color of the circle */
+  border-radius: 50%;       /* Makes the shape circular */
+  display: flex;    
+  justify-content: center;  /* Center the logo inside the circle */
+  align-items: center;
+ 
+  overflow: hidden;         /* Ensure the image stays inside the circle */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.logo-circle:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35), 
+              inset 0 3px 5px rgba(255, 255, 255, 0.7); /* Enhanced 3D effect */
+}
+
+.logo-circle img {
+  width: 100%;            /* Ensure the image fills the circle */
+  height: 100%;
+  object-fit: cover;      /* Prevent distortion of the image */
+  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.logo-circle:hover img {
+  transform: scale(1.2); /* Zoom effect on the image */
+}
+
+
+
+.floating-icons {
+  position: fixed;            /* Keeps the icons fixed on the screen */
+  bottom: 20px;               /* Distance from the bottom */
+  right: 20px;                /* Distance from the right */
+  display: flex;
+  flex-direction: column;     /* Stack the icons vertically */
+  gap: 10px;                  /* Space between the icons */
+  z-index: 9999;              /* Ensures they appear above all other elements */
+}
+
+.icon {
+  width: 35px;                /* Size of the icon container */
+  height: 35px;
+  background: white;          /* Background color */
+  border-radius: 50%;         /* Makes the container circular */
+  display: flex;              /* Centers the image */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for visibility */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.icon img {
+  width: 60%;                 /* Resizes the icon to fit within the circle */
+  height: 60%;
+}
+
+.icon:hover {
+  transform: scale(1.1);      /* Slight zoom effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.icon.whatsapp {
+  background-color: #25d366;  /* WhatsApp green background */
+}
+
+.icon.facebook {
+  background-color: #1877f2;  /* Facebook blue background */
+}
+
+
+
+    </style>
+
+
+
+<style>
+      /* Desktop styles (default) */
+.top-nav, .header {
+    position: fixed;
+    top: -200px; /* Initially hidden */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
+}
+
+.top-nav {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav.visible {
+    top: 0; /* Appear when scrolled */
+}
+
+.header.visible {
+    top: 60px; /* Appears below the top-nav */
+}
+
+.top-nav .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.top-nav .nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+.top-nav .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.top-nav .social-icons a {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.header .logo h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #006400;
+}
+
+.header .logo h1 span {
+    display: block;
+    font-size: 24px;
+}
+
+/* Mobile styles (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+
+    /* Top-nav: Hide unnecessary elements, keep email and phone on the same line */
+    .top-nav .nav-links, .top-nav .social-icons, .top-nav .contact span {
+        display: none; /* Remove extra text and links */
+    }
+
+    .top-nav .contact {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .top-nav .contact .email a, .top-nav .contact .phone a {
+        font-size: 10px; /* Adjust font size */
+        color: white;
+        text-decoration: none;
+    }
+
+    .top-nav .contact .email, .top-nav .contact .phone {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+   
+   
+    /* Header: Hide nav menu and only display logo and toggle menu icon */
+    .header .nav-menu {
+        display: none; /* Hide menu links */
+    }
+
+    .header .contact {
+        display: none; /* Hide contact info */
+    }
+
+    .header .logo img {
+        height: 50px; /* Adjust logo size */
+    }
+
+    .header .logo h1 {
+        font-size: 24px;
+    }
+
+    .header .logo h1 span {
+        font-size: 16px;
+    }
+
+    .header .fa-bars {
+        display: block; /* Display toggle menu icon */
+        font-size: 24px;
+        color: blue;
+        cursor: pointer;
+    }
+}
+
+.main-content {
+    height: 200vh; /* Just for demo to allow scrolling */
+    padding-top: 150px; /* To ensure content below the nav/header is visible */
+}
+
+/* Mobile styles (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+
+    /* Hide unnecessary elements in top-nav */
+    .top-nav .nav-links, .top-nav .social-icons {
+        display: none;
+    }
+
+    /* Keep only email and phone visible in top-nav */
+    .top-nav .contact {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .top-nav .contact .email span, .top-nav .contact .phone span {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    /* Hide unnecessary elements in header */
+    .header .contact {
+        display: none; /* Hide contact info on mobile */
+    }
+
+    .header .logo img {
+        height: 50px; /* Smaller logo for mobile */
+    }
+
+    .header .logo h1 {
+        font-size: 24px; /* Adjust title font size */
+    }
+
+    .header .logo h1 span {
+        font-size: 16px; /* Adjust subtitle font size */
+    }
+
+    .header .nav-menu {
+        display: none; /* Hide navigation menu on mobile */
+    }
+
+    .header .fa-bars {
+        display: block; /* Keep only the hamburger menu icon */
+        font-size: 24px;
+        color: blue;
+    }
+}
+
+    </style>
+
+
+<style>
+    #sidebar {
+    position: fixed;
+    top: 0;
+    right: -60%;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(18, 0, 66, 0.9); /* Example background */
+    transition: right 0.3s ease; /* Smooth sliding animation */
+    z-index: 9999999;
+}
+
+
+        /* Sidebar Container */
+        .sidebar-container {
+            font-family: 'Roboto', sans-serif;
+            position: fixed;
+            top: 0;
+            right: -60%; /* Initially hidden on the right */
+            width: 60%;
+            height: 100vh;
+            background-color: rgba(18, 0, 66, 0.9);
+            color: white;
+            z-index: 9999;
+            transition: right 0.3s ease-in-out; /* Smooth transition */
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 34px;
+            right: 70px;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hamburger Button */
+        .hamburger-btn {
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+        }
+
+        /* Sidebar Sections */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between sections */
+        }
+
+        .section {
+            flex: 1;
+            min-width: calc(50% - 10px); /* Two sections per row with space */
+            padding: 20px;
+            
+        }
+
+        .section h2 {
+            color: #ffc107;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #ffc107;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            margin: 10px 0;
+        }
+
+        .section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .section ul li a:hover {
+            color: #ffc107;
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .section {
+                min-width: 100%;
+            }
+        }
+
+    </style>
+
+    <style>
+        /* Ensure logo and menu icon are visible on smaller screens */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    margin-right: 10px;
+}
+
+.navbar-toggler i {
+    font-size: 24px;
+    color: white;
+}
+
+/* Hide college name on smaller screens */
+@media (max-width: 768px) {
+   
+
+    .navbar {
+        justify-content: space-between;
+    }
+}
+
+/* Hide navbar items on laptop and larger screens */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav {
+        display: none; /* Hide navbar items on tablet/laptop screens */
+    }
+    
+    .menu-icon {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+/* Show navbar items on mobile screens */
+@media (max-width: 767px) {
+    .navbar-nav {
+        display: flex; /* Show navbar items on smaller screens */
+    }
+}
+
+/* Show navbar items in larger screens */
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex; /* Show navbar items on larger screens */
+    }
+
+    .menu-icon {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
+}
+
+
+    </style>
+
+    <style>
+       /* Mobile styles (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    .nav-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    /* Initially hide sections */
+    .nav-links {
+        display: none;
+        margin-top: 4px;
+    }
+
+    /* When active, show the links */
+    .nav-links.active {
+        display: block;
+    }
+
+    .toggle-icon {
+        font-size: 18px;
+    }
+}
+
+/* Desktop styles (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+    .nav-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: block;
+    }
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .toggle-icon {
+        display: none; /* Remove the toggle icon on desktop */
+    }
+}
+
+
+    </style>
+
+
+<style>
+/* Default - Desktop View */
+.header .nav-menu {
+    display: flex; /* Show menu links */
+    gap: 20px;
+}
+
+
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+    .header {
+        margin-top: -80px; /* Adjust the margin to move it up */
+    }
+}
+
+
+
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+    .header .nav-menu {
+        display: none; /* Hide the menu links */
+    }
+
+   
+    .header .nav-link {
+        display: block; /* Show the menu icon */
+        font-size: 24px;
+        color: blue;
+        cursor: pointer;
+    }
+}
+
+    </style>
+    <div class="landingpage">
+        <div class="image">
+            <div class="overlay-image"></div>
+            <img class="back-img-1" src="image/about-us-image.jpg" alt="">
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container d-flex justify-content-between align-items-center">
+                <!-- Left side: Logo and college name -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <div class="logo-circle">
+                        <img alt="eduAct logo" src="logo.png" />
+                    </div>
+                    <div class="college-name ms-2">
+                        <span class="college-line-1">Birat</span><br />
+                        <span class="college-line-2">Multiple College</span>
+                    </div>
+                </a>
+    
+                <!-- Right side: Menu icon (for mobile) -->
+                <div class="menu-icon" onclick="toggleSidebar()">
+                    <i class="fas fa-bars" style="font-size: 24px; color: white;"></i>
+                </div>
+            </div>
+    
+            <!-- Navbar items (visible on larger screens) -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav mx-auto"  style="margin-left: -200px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Scholarship</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admission</a>
+                    </li>
+                </ul>
+    
+                <!-- Right side: Button and icons -->
+                <ul class="navbar-nav" style="margin-left: 170px;">
+                    <li class="nav-item right-aligned">
+                        <a class="btn btn-custom" href="#" style="width: 180px;padding: 10px 5px;">Get In Touch</a>
+                    </li>
+                    <li class="nav-item right-aligned">
+                        <a class="nav-link" href="#" onclick="toggleSidebar()"><i class="fas fa-bars"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <style>
+            .circ-icons1{
+                position: absolute;
+               display: flex;
+               margin-top: 51vh; 
+               margin-left: -60px;
+            }
+            .circ-icons2{
+                position: absolute;
+               display: flex;
+               margin-top: 53vh; 
+            }
+            .circ-icons1 .i1{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+            .circ-icons2 .i2{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+            @media(max-width:800px){
+                .circ-icons1{
+                position: absolute;
+               display: flex;
+               margin-top: 35vh; 
+               margin-left: -40px;
+            }
+            .circ-icons2{
+                position: absolute;
+               display: flex;
+               margin-top: 35.5vh; 
+            }
+            .circ-icons1 .i1{
+                color: rgb(255, 255, 255);
+                font-size: 80px; 
+            }
+            .circ-icons2 .i2{
+                color: rgb(255, 255, 255);
+                font-size: 80px; 
+            }
+            }
+        </style>
+        <div class="circ-icons1">
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            
+        </div>
+        <div class="circ-icons2">
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+        </div>
+    </div>
+</body>
+</html>
